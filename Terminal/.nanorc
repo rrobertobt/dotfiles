@@ -1,3 +1,4 @@
 include /usr/share/nano/*
 set tabsize 4
 
+# also add this to /etc/nanorc
