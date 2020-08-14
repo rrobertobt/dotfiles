@@ -1,0 +1,7 @@
+### Things to do when fresh install Manjaro KDE###
+
+# Google Drive Dolphin integration
+pacman -S kio-gdrive
+
+# Plasma browser integration package
+pacman -S plasma-browser-integration
