@@ -5,3 +5,6 @@ pacman -S kio-gdrive
 
 # Plasma browser integration package
 pacman -S plasma-browser-integration
+
+#nano syntax colors
+ls -1 /usr/share/nano/*.nanorc | sed 's/^\//include \//' >> ~/.nanorc
