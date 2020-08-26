@@ -104,9 +104,9 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+alias pinstall="sudo pacman -Sy"
+alias sysinfo="inxi -Fazy"
 #pfetch
-pfetch
 
 #Powerlevel10k
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
