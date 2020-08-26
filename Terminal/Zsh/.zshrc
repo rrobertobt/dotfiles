@@ -124,5 +124,7 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 #sytax highlighing
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# don`t throw errors when file globs don`t match anything
+setopt NULL_GLOB
 
 
