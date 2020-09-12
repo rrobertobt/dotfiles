@@ -101,11 +101,18 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+
+
+
+# Aliases
 alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pinstall="sudo pacman -Sy"
 alias sysinfo="inxi -Fazy"
+alias fuck="sudo !!"
+
+
+
 #pfetch
 
 #Powerlevel10k
