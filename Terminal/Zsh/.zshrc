@@ -113,13 +113,13 @@ alias fuck="sudo !!"
 
 
 
-#pfetch
-
 #Powerlevel10k
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+
 
 #rbenv
 export PATH="$HOME/.rbenv/bin:$PATH"
@@ -128,8 +128,14 @@ eval "$(rbenv init -)"
 #ruby build
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
+
+
+
 #sytax highlighing
 source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+
+
 
 # don`t throw errors when file globs don`t match anything
 setopt NULL_GLOB
