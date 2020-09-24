@@ -33,7 +33,7 @@
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     os_icon                 # os identifier
     dir                     # current directory
-    vcs                     # git status
+    #vcs                     # git status
     context
     # prompt_char           # prompt symbol
   )
@@ -94,6 +94,7 @@
     todo                    # todo items (https://github.com/todotxt/todo.txt-cli)
     timewarrior             # timewarrior tracking status (https://timewarrior.net/)
     taskwarrior             # taskwarrior task count (https://taskwarrior.org/)
+    vcs
     time                    # current time
     # ip                    # ip address and bandwidth usage for a specified network interface
     # public_ip             # public IP address
@@ -871,7 +872,7 @@
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=3
   typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_BACKGROUND=0
   # Default context color (no privileges, no SSH).
-  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=3
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=216
   typeset -g POWERLEVEL9K_CONTEXT_BACKGROUND=244
 
   # Context format when running with privileges: user@hostname.
