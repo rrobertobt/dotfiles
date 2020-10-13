@@ -15,7 +15,9 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
+
+#"robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -112,13 +114,11 @@ alias sysinfo="inxi -Fazy"
 alias fuck="sudo !!"
 
 
-
 #Powerlevel10k
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
 
 
 #rbenv
@@ -129,15 +129,22 @@ eval "$(rbenv init -)"
 export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 
-
-
 #sytax highlighing
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+# old
+# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
+# Fish-like autosuggestions - provided by 'zsh-autosuggestions' package
 
-# don`t throw errors when file globs don`t match anything
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
+# don't throw errors when file globs don`t match anything
 setopt NULL_GLOB
 
+# coloscript
 
+~/Ricing/shell-color-scripts/colorscripts/crunch
+
+# pfetch
