@@ -15,7 +15,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="agnoster"
+ZSH_THEME="robbyrussell"
 
 #"robbyrussell"
 
@@ -110,9 +110,11 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="nano ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pinstall="sudo pacman -Sy"
+alias premove="sudo pacman -Rn"
 alias sysinfo="inxi -Fazy"
 alias fuck="sudo !!"
-
+alias dotfiles="cd ~/Git/dotfiles"
+alias cls="clear"
 
 #Powerlevel10k
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -130,21 +132,16 @@ export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 
 #sytax highlighing
-
-# old
-# source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# Fish-like autosuggestions - provided by 'zsh-autosuggestions' package
 
+# Fish-like autosuggestions - provided by 'zsh-autosuggestions' package
 source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+
 
 # don't throw errors when file globs don`t match anything
 setopt NULL_GLOB
 
+
 # coloscript
-
-~/Ricing/shell-color-scripts/colorscripts/crunch
-
-# pfetch
+~/Customization/shell-color-scripts/colorscripts/crunch
