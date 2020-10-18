@@ -8,7 +8,7 @@ Color=40,40,40
 Color=40,40,40
 
 [Color0]
-Color=40,40,40
+Color=39,39,39
 
 [Color0Faint]
 Color=40,40,40
@@ -92,5 +92,5 @@ Color=235,219,178
 Blur=true
 ColorRandomization=false
 Description=Gruvbox
-Opacity=0.82
+Opacity=0.78
 Wallpaper=
