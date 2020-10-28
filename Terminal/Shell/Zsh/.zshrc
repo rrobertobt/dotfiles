@@ -141,7 +141,3 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
 # don't throw errors when file globs don`t match anything
 setopt NULL_GLOB
-
-
-# coloscript
-~/Customization/shell-color-scripts/colorscripts/crunch
