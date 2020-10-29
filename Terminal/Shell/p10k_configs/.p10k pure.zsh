@@ -21,6 +21,18 @@
 # `p10k configure` and pick "Lean" style. This will give you slick minimalist prompt while taking
 # advantage of Powerlevel10k features that aren't present in Pure.
 
+
+#########################################################
+#  _____   _____                                        #
+# |  _  \ |  _  \    (Modified by) Roberto Bautista     #
+# | |_| | | |_| |                                       #
+# |    _| |  _  \    https://github.com/rrobertobt      #
+# | |\ \  | |_| |                                       #
+# |_| \_\ |_____/    My p10k config file (pure style)   #
+#                                                       #
+#########################################################
+
+
 # Temporarily change options.
 'builtin' 'local' '-a' 'p10k_config_opts'
 [[ ! -o 'aliases'         ]] || p10k_config_opts+=('aliases')
