@@ -9,7 +9,7 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+export ZSH=/usr/share/oh-my-zsh
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -111,7 +111,6 @@ source $ZSH/oh-my-zsh.sh
 
 
 alias zshconfig="nvim ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 alias pacinstall="sudo pacman -Sy"
 alias pacremove="sudo pacman -Rn"
 alias sysinfo="inxi -Fazy"
@@ -119,11 +118,14 @@ alias fuck="sudo !!"
 alias dotfiles="cd ~/Git/dotfiles"
 alias cls="clear"
 alias home="cd ~/" 
-alias ls="exa -la --color=always"
+alias oldhome="cd /home/roberto_mjro_old/"
 
-###
+### ls is exa
+alias ls="exa -Gla --color=always"
+
+##########
 # PLUGINS
-###
+##########
 
 #Powerlevel10k
 source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
@@ -134,12 +136,12 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 
 #rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
+#export PATH="$HOME/.rbenv/bin:$PATH"
+#eval "$(rbenv init -)"
 
 
 #ruby build
-export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+#export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
 
 #sytax highlighing
@@ -155,7 +157,7 @@ setopt NULL_GLOB
 
 
 # Flutter
-export PATH="$HOME/Devel/flutter/bin:$PATH"
+# export PATH="$HOME/Devel/flutter/bin:$PATH"
 
 
 # Make 'yay' (AUR helper) completitions work
