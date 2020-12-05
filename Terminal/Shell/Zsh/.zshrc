@@ -119,7 +119,11 @@ alias dotfiles="cd ~/Git/dotfiles"
 alias cls="clear"
 alias home="cd ~/" 
 alias oldhome="cd /home/roberto_mjro_old/"
-
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias vim="nvim"
+alias nnn="nnn -H"
 ### ls is exa
 alias ls="exa -Gla --color=always"
 
@@ -163,3 +167,5 @@ setopt NULL_GLOB
 # Make 'yay' (AUR helper) completitions work
 # autoload -Uz compinit
 # compinit
+pfetch
+# echo "Last login: `last -1 -R $USER | head -1 | cut -c 20-`"
