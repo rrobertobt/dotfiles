@@ -11,4 +11,4 @@
  Icon=com.visualstudio.code
  Exec=code %u
 
- # copy to: /home/roberto/.local/share/kservices5/ServiceMenus/
+ # copy to: /home/$USER/.local/share/kservices5/ServiceMenus/
