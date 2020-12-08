@@ -64,7 +64,6 @@ alias sysinfo="inxi -Fazy"
 # ---------------------
 # Navigation
 alias dotfiles="cd ~/Git/dotfiles"
-alias home="cd ~/" 
 alias oldhome="cd /home/roberto_mjro_old/"
 # ---------------------
 
@@ -74,6 +73,7 @@ alias oldhome="cd /home/roberto_mjro_old/"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
+alias cat="ccat"
 alias nnn="nnn -H"
 # ---------------------
 
@@ -85,8 +85,9 @@ alias vim="nvim"
 
 
 # ---------------------
-# 'ls' replacement
-alias ls="exa -Glah --color=always --git --color-scale"
+# Improved 'ls'
+alias tree="exa -T --color=always --color-scale"
+alias ls="exa -Glah --color=always --git --color-scale --group-directories-first"
 # ---------------------
 
 
@@ -107,20 +108,6 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 # ---------------------
 
 
-
-# ---------------------
-# ruby
-# ---------------------
-# rbenv
-# export PATH="$HOME/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-
-# ruby build
-# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
-# ---------------------
-
-
-
 # ---------------------
 # Syntax highlighing
 source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
@@ -136,6 +123,17 @@ source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 # ---------------------
 # Don't throw errors when file globs don't match anything
 setopt NULL_GLOB
+# ---------------------
+
+# ---------------------
+# ruby
+# ---------------------
+# rbenv
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# eval "$(rbenv init -)"
+
+# ruby build
+# export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 # ---------------------
 
 
