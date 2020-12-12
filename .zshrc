@@ -52,6 +52,7 @@ alias fuck="sudo !!"
 # Package managing (pacman)
 alias pacinstall="sudo pacman -Sy"
 alias pacremove="sudo pacman -Rn"
+alias pacupdate="sudo pacman -Syyu"
 # ---------------------
 
 
@@ -70,6 +71,7 @@ alias oldhome="cd /home/roberto_mjro_old/"
 
 # ---------------------
 # File managment
+
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
@@ -87,7 +89,8 @@ alias vim="nvim"
 # ---------------------
 # Improved 'ls'
 alias tree="exa -T --color=always --color-scale"
-alias ls="exa -Glah --color=always --git --color-scale --group-directories-first"
+alias ls="exa -Glh --color=always --git --color-scale --group-directories-first"
+alias la="exa -Glah --color=always --git --color-scale --group-directories-first"
 # ---------------------
 
 
@@ -157,7 +160,7 @@ setopt NULL_GLOB
 pfetch
 # ---------------------
 
-
+/home/robertob/.spectrum
 
 # ---------------------
 # Print last login
