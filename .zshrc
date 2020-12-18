@@ -11,7 +11,7 @@ fi
 
 # ---------------------
 # oh-my-zsh and zsh settings
-export ZSH=/usr/share/oh-my-zsh
+export ZSH=/usr/share/oh-my-zsh 
 
 ZSH_THEME="robbyrussell"
 
@@ -75,7 +75,6 @@ alias oldhome="cd /home/roberto_mjro_old/"
 alias rm="rm -i"
 alias mv="mv -i"
 alias cp="cp -i"
-alias cat="ccat"
 alias nnn="nnn -H"
 # ---------------------
 
@@ -142,7 +141,7 @@ setopt NULL_GLOB
 
 # ---------------------
 # Flutter
-# export PATH="$HOME/Devel/flutter/bin:$PATH"
+export PATH="$HOME/Devel/flutter/bin:$PATH"
 # ---------------------
 
 
@@ -157,10 +156,10 @@ setopt NULL_GLOB
 # ---------------------
 # Run 'pfetch' command everytime zsh runs
 # ---------------------
-pfetch
+#pfetch
 # ---------------------
 
-/home/robertob/.spectrum
+#/home/robertob/.spectrum
 
 # ---------------------
 # Print last login
