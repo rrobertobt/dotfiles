@@ -5,19 +5,21 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # ---------------------
 
 
 
 # ---------------------
 # oh-my-zsh and zsh settings
-export ZSH=/usr/share/oh-my-zsh 
+export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 COMPLETION_WAITING_DOTS="true"
 
-plugins=(git)
+plugins=(git fast-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 # ---------------------
@@ -99,26 +101,8 @@ alias la="exa -Glah --color=always --git --color-scale --group-directories-first
 # =====================
 
 # ---------------------
-# powerlevel10k
-# ---------------------
-#
-# Load powerlevel10k
-source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
-
-# Load powerlevel10k config
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# ---------------------
-
-
-# ---------------------
-# Syntax highlighing
-source /usr/share/zsh/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
-# ---------------------
-
-
-# ---------------------
 # Fish-like autosuggestions
-source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+source /usr/share/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 # ---------------------
 
 
@@ -141,7 +125,7 @@ setopt NULL_GLOB
 
 # ---------------------
 # Flutter
-export PATH="$HOME/Devel/flutter/bin:$PATH"
+# export PATH="$HOME/Devel/flutter/bin:$PATH"
 # ---------------------
 
 
@@ -152,14 +136,6 @@ export PATH="$HOME/Devel/flutter/bin:$PATH"
 # compinit (or run this command, or delete .zcompdump...)
 # ---------------------
 
-
-# ---------------------
-# Run 'pfetch' command everytime zsh runs
-# ---------------------
-#pfetch
-# ---------------------
-
-#/home/robertob/.spectrum
 
 # ---------------------
 # Print last login
