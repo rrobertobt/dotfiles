@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
 
 " Colorschemes
 Plug 'morhetz/gruvbox'
+Plug 'crusoexia/vim-monokai'
 
 " IDE-like
 
@@ -27,6 +28,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'mcchrish/nnn.vim'
+Plug 'rakr/vim-one'
+Plug 'connorholyday/vim-snazzy'
 
 call plug#end()
 
@@ -35,8 +38,10 @@ let NERDTreeQuitOnOpen=1
 let mapleader=" "
 
 " Set colorscheme
-colorscheme gruvbox
-let g:gruvbox_contrast_dark = "hard"
+" set t_Co=256
+colorscheme snazzy
+" set background=dark
+let g:gruvbox_contrast_dark = "soft"
 
 " --------------- " 
 " Config airline  "
@@ -57,7 +62,8 @@ let g:airline_right_sep = ''
 "
 " Set theme
 "
-let g:airline_theme = 'gruvbox'
+let g:airline_theme='one'
+"let g:airline_theme = 'gruvbox'
 
 "
 " Always show tabs
