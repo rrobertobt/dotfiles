@@ -1,0 +1,123 @@
+# Don't print a new line at the start of the prompt
+add_newline = false
+
+format = """
+$hostname$directory$git_branch$git_status$python$dart$ruby$php$nodejs$cmd_duration
+$status$character"""
+
+[status]
+format = '[\[$symbol $int\]]($style)'
+map_symbol = false
+disabled = false
+
+[cmd_duration]
+min_time = 500
+format = "羽took [$duration ](bold yellow)"
+
+[time]
+disabled = false
+style = "bold yellow"
+format = '@[$time]($style)'
+time_format = "%H:%M"
+
+[hostname]
+ssh_only = true
+
+[line_break]
+disabled = false
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[ ❯](bold red)"
+
+[username]
+show_always = true
+
+[git_status]
+staged = '[\(+$count\)](green)'
+untracked = '[\(?$count\)](blue)'
+deleted = '[\(✘$count\)](red)'
+format = '([$all_status$ahead_behind]($style) )'
+
+
+[directory]
+read_only = " "
+read_only_style = "bold yellow"
+style = "bold blue"
+truncation_length = 3
+truncate_to_repo = false
+truncation_symbol = ".../"
+# Disable the package module, hiding it from the prompt completely
+
+[aws]
+symbol = " "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+[docker]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+disabled = true
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+scan_for_pyfiles = true
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
+
+

@@ -2,38 +2,35 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # ---------------------
 
-
+eval "$(starship init zsh)"
 
 # ---------------------
 # oh-my-zsh and zsh settings
 # ---------------------
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="agnoster"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 COMPLETION_WAITING_DOTS="true"
 
 DISABLE_AUTO_TITLE="true"
-plugins=(git fast-syntax-highlighting)
+plugins=(git fast-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+# -------------------
 
-#PROMPT_TITLE="$USER @ $PWD"
-
-
-function set_terminal_title() {
-  echo -en "\e]2;$@\a"
+function set_win_title(){
+    echo -ne "\033]0; $(echo "$PWD") \007"
 }
-# ---------------------
-
-
+precmd_functions+=(set_win_title)
 
 # ---------------------
 # Preferred editor for local and remote sessions
@@ -98,9 +95,9 @@ alias vim="nvim"
 
 # ---------------------
 # Improved 'ls'
-alias tree="exa -T --color=always --color-scale"
-alias ls="exa -Glh --color=always --git --color-scale --group-directories-first"
-alias la="exa -Glah --color=always --git --color-scale --group-directories-first"
+alias tree="exa -T --color=always --color-scale --icons"
+alias ls="exa -Glh --color=always --git --color-scale --group-directories-first --icons"
+alias la="exa -Glah --color=always --git --color-scale --group-directories-first --icons"
 # ---------------------
 
 
@@ -108,11 +105,6 @@ alias la="exa -Glah --color=always --git --color-scale --group-directories-first
 # =====================
 # PLUGINS
 # =====================
-
-# ---------------------
-# Fish-like autosuggestions
-source /usr/share/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
-# ---------------------
 
 
 # ---------------------
