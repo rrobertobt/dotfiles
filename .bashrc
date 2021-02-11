@@ -11,48 +11,68 @@ eval "$(starship init bash)"
 # Aliases
 # =====================
 
+# ---------------------                           
+# Terminal                                        
+alias zshconfig="nvim ~/.zshrc"                   
+alias fishconfig="nvim ~/.config/fish/config.fish"
+alias cls="clear"                                 
+# ---------------------                           
+                                                  
+# ---------------------                           
+# Package managing (dnf)                          
+alias dinstall="sudo dnf install"                 
+alias dremove="sudo dnf remove"                   
+alias dupdate="sudo dnf update"                   
+alias dupgrade="sudo dnf upgrade"                 
+# ---------------------                           
+                                                  
+                                                  
+# ---------------------                           
+# Package managing (pacman)                       
+alias pacinstall="sudo pacman -S"                
+alias pacremove="sudo pacman -Rn"                 
+alias pacupdate="sudo pacman -Syyu"               
 # ---------------------
-# Terminal
-alias zshconfig="nvim ~/.zshrc"
-alias cls="clear"
+#
+
+# ---------------------           
+# System                          
+alias sysinfo="inxi -Fazy"        
+# ---------------------           
+                                  
+                                  
+# ---------------------           
+# Navigation                      
+alias dotfiles="cd ~/dev/dotfiles"
+# ---------------------           
+                                  
+                                  
+# ---------------------           
+# File managment                  
+alias rm="rm -i"                  
+alias mv="mv -i"                  
+alias cp="cp -i"                  
 # ---------------------
 
-
-# ---------------------
-# Package managing (pacman)
-alias pacinstall="sudo pacman -Sy"
-alias pacremove="sudo pacman -Rn"
-alias pacupdate="sudo pacman -Syyu"
-# ---------------------
-
-
-# ---------------------
-# System
-alias sysinfo="inxi -Fazy"
-# ---------------------
-
-
-# ---------------------
-# File managment
-
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-alias nnn="nnn -H"
+# ---------------------                                                                  
+# Text editing                                                                           
+alias vim="nvim"                                                                         
+# ---------------------                                                                  
+                                                                                         
+                                                                                         
+# ---------------------                                                                  
+# Improved 'ls'                                                                          
+alias tree="exa -T --color=always --color-scale --icons"                                 
+alias ls="exa -G --color=always --git --color-scale --group-directories-first --icons" 
+alias la="exa -Ga --color=always --git --color-scale --group-directories-first --icons"
+alias ll="exa -Glah --color=always --git --color-scale --group-directories-first --icons"
 # ---------------------
 
-
 # ---------------------
-# Text editing
-alias vim="nvim"
-# ---------------------
-
-
-# ---------------------
-# Improved 'ls'
-alias tree="exa -T --color=always --color-scale --icons"
-alias ls="exa -Glh --color=always --git --color-scale --group-directories-first --icons"
-alias la="exa -Glah --color=always --git --color-scale --group-directories-first --icons"
+# Switch between shells
+alias tobash="sudo chsh $USER -s `which bash` && echo 'Now log out...'"
+alias tozsh="sudo chsh $USER -s `which zsh` && echo 'Now log out...'"
+alias tofish="sudo chsh $USER -s `which fish` && echo 'Now log out...'"
 # ---------------------
 
 

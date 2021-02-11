@@ -1,7 +1,6 @@
 # ---------------------
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# Powerlevel10k prompt and instant prompt
+# ---------------------
 #if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 #fi
@@ -9,7 +8,12 @@
 #[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # ---------------------
 
+
+# ---------------------
+# start starship prompt
+# ---------------------
 eval "$(starship init zsh)"
+
 
 # ---------------------
 # oh-my-zsh and zsh settings
@@ -21,16 +25,17 @@ ZSH_THEME="agnoster"
 
 COMPLETION_WAITING_DOTS="true"
 
-DISABLE_AUTO_TITLE="true"
+DISABLE_AUTO_TITLE="false"
 plugins=(git fast-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 # -------------------
 
-function set_win_title(){
-    echo -ne "\033]0; $(echo "$PWD") \007"
-}
-precmd_functions+=(set_win_title)
+#function set_win_title(){
+#    echo -ne "\033]0; $(echo "$PWD") \007"
+#}
+#precmd_functions+=(set_win_title)
+
 
 # ---------------------
 # Preferred editor for local and remote sessions
@@ -47,57 +52,69 @@ fi
 # =====================
 # Aliases
 # =====================
+                       
+# ---------------------                           
+# Terminal                                        
+alias zshconfig="nvim ~/.zshrc"                   
+alias fishconfig="nvim ~/.config/fish/config.fish"
+alias cls="clear"                                 
+# ---------------------                           
+                                                  
+# ---------------------                           
+# Package managing (dnf)                          
+alias dinstall="sudo dnf install"                 
+alias dremove="sudo dnf remove"                   
+alias dupdate="sudo dnf update"                   
+alias dupgrade="sudo dnf upgrade"                 
+# ---------------------                           
+                                                  
+                                                  
+# ---------------------                           
+# Package managing (pacman)                       
+alias pacinstall="sudo pacman -S"                
+alias pacremove="sudo pacman -Rn"                 
+alias pacupdate="sudo pacman -Syyu"               
+# ---------------------
+#
+
+# ---------------------           
+# System                          
+alias sysinfo="inxi -Fazy"        
+# ---------------------           
+                                  
+                                  
+# ---------------------           
+# Navigation                      
+alias dotfiles="cd ~/dev/dotfiles"
+# ---------------------           
+                                  
+                                  
+# ---------------------           
+# File managment                  
+alias rm="rm -i"                  
+alias mv="mv -i"                  
+alias cp="cp -i"                  
+# ---------------------
+
+# ---------------------                                                                  
+# Text editing                                                                           
+alias vim="nvim"                                                                         
+# ---------------------                                                                  
+                                                                                         
+                                                                                         
+# ---------------------                                                                  
+# Improved 'ls'                                                                          
+alias tree="exa -T --color=always --color-scale --icons"                                 
+alias ls="exa -G --color=always --git --color-scale --group-directories-first --icons" 
+alias la="exa -Ga --color=always --git --color-scale --group-directories-first --icons"
+alias ll="exa -Glah --color=always --git --color-scale --group-directories-first --icons"
+# ---------------------
 
 # ---------------------
-# Terminal
-alias zshconfig="nvim ~/.zshrc"
-alias cls="clear"
-alias fuck="sudo !!" 
-# ---------------------
-
-
-# ---------------------
-# Package managing (pacman)
-alias pacinstall="sudo pacman -Sy"
-alias pacremove="sudo pacman -Rn"
-alias pacupdate="sudo pacman -Syyu"
-# ---------------------
-
-
-# ---------------------
-# System
-alias sysinfo="inxi -Fazy"
-# ---------------------
-
-
-# ---------------------
-# Navigation
-alias dotfiles="cd ~/Git/dotfiles"
-alias oldhome="cd /home/roberto_mjro_old/"
-# ---------------------
-
-
-# ---------------------
-# File managment
-
-alias rm="rm -i"
-alias mv="mv -i"
-alias cp="cp -i"
-alias nnn="nnn -H"
-# ---------------------
-
-
-# ---------------------
-# Text editing
-alias vim="nvim"
-# ---------------------
-
-
-# ---------------------
-# Improved 'ls'
-alias tree="exa -T --color=always --color-scale --icons"
-alias ls="exa -Glh --color=always --git --color-scale --group-directories-first --icons"
-alias la="exa -Glah --color=always --git --color-scale --group-directories-first --icons"
+# Switch between shells
+alias tobash="sudo chsh $USER -s `which bash` && echo 'Now log out...'"
+alias tozsh="sudo chsh $USER -s `which zsh` && echo 'Now log out...'"
+alias tofish="sudo chsh $USER -s `which fish` && echo 'Now log out...'"
 # ---------------------
 
 
@@ -105,6 +122,11 @@ alias la="exa -Glah --color=always --git --color-scale --group-directories-first
 # =====================
 # PLUGINS
 # =====================
+
+# ---------------------
+# Fish-like autosuggestions
+# source /usr/share/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
+# ---------------------
 
 
 # ---------------------
@@ -141,5 +163,10 @@ setopt NULL_GLOB
 # ---------------------
 # Print last login
 # ---------------------
-# echo "Last login: `last -1 -R $USER | head -1 | cut -c 20-`"
+# echo "Last login:`last -2 -R $USER | head -2 | cut -c 20- | sed -n '1!p'`"
 # ---------------------
+export ZSH_THEME_TERM_TITLE_IDLE="%n:%~"
+
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
