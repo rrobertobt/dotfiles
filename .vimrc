@@ -41,7 +41,7 @@ let mapleader=" "
 " set t_Co=256
 colorscheme snazzy
 " set background=dark
-let g:gruvbox_contrast_dark = "soft"
+" let g:gruvbox_contrast_dark = "soft"
 
 " --------------- " 
 " Config airline  "
