@@ -2,7 +2,7 @@
 add_newline = false
 
 format = """
-$directory$git_branch$git_status$git_commit
+$username$directory$git_branch$git_status$git_commit$nodejs
 $cmd_duration$status$character
 """
 
@@ -42,7 +42,7 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-format = "[$symbol$branch]($style) "
+format = "on [$symbol$branch]($style) "
 
 [hg_branch]
 symbol = " "
@@ -81,8 +81,8 @@ disabled = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[->](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[ ->](bold red)"
+success_symbol = "[\\$](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[ \\$](bold red)"
 
 
 [time]
@@ -101,7 +101,7 @@ disabled = false
 
 [username]
 show_always = true
-format = "[$user]($style)@"
+format = "[$user]($style):"
 style_user = "bold yellow"
 
 

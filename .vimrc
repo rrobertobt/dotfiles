@@ -1,4 +1,5 @@
 set number
+set nocompatible
 set mouse=a
 set numberwidth=2
 set clipboard=unnamed
@@ -17,7 +18,7 @@ call plug#begin('~/.vim/plugged')
 " Colorschemes
 Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-monokai'
-
+Plug 'dracula/vim', { 'as': 'dracula' } 
 " IDE-like
 
 Plug 'easymotion/vim-easymotion'
@@ -39,9 +40,9 @@ let mapleader=" "
 
 " Set colorscheme
 " set t_Co=256
-colorscheme snazzy
+colorscheme gruvbox
 " set background=dark
-" let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_contrast_dark = "soft"
 
 " --------------- " 
 " Config airline  "
@@ -56,14 +57,13 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 " Enable powerline fonts
 "
 let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 "
 " Set theme
 "
-let g:airline_theme='one'
-"let g:airline_theme = 'gruvbox'
+let g:airline_theme='gruvbox'
 
 "
 " Always show tabs

@@ -105,9 +105,8 @@ alias vim="nvim"
 # ---------------------                                                                  
 # Improved 'ls'                                                                          
 alias tree="exa -T --color=always --color-scale --icons"                                 
-alias ls="exa -G --color=always --git --color-scale --group-directories-first --icons" 
-alias la="exa -Ga --color=always --git --color-scale --group-directories-first --icons"
-alias ll="exa -Glah --color=always --git --color-scale --group-directories-first --icons"
+alias ls="exa -lh --color=always --git --color-scale --group-directories-first --icons" 
+alias la="exa -lha --color=always --git --color-scale --group-directories-first --icons"
 # ---------------------
 
 # ---------------------
