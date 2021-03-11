@@ -19,10 +19,10 @@
 # colors
 # =====================  
 
-set fish_color_normal normal
+set fish_color_normal white --bold
 set fish_color_autosuggestion '555' brblack
-set fish_color_command green --bold
-set fish_color_error red -r -c
+set fish_color_command white --bold
+set fish_color_error red
 set fish_color_param cyan
 
 
