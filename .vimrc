@@ -12,6 +12,7 @@ set relativenumber
 set cursorline
 set noshowmode
 set cmdheight=1
+set termguicolors
 set hidden
 call plug#begin('~/.vim/plugged')
 
@@ -19,6 +20,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-monokai'
 Plug 'dracula/vim', { 'as': 'dracula' } 
+Plug 'arcticicestudio/nord-vim'
 " IDE-like
 
 Plug 'easymotion/vim-easymotion'
@@ -30,6 +32,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'mcchrish/nnn.vim'
 Plug 'rakr/vim-one'
+Plug 'lifepillar/vim-solarized8'
 Plug 'connorholyday/vim-snazzy'
 
 call plug#end()
@@ -40,9 +43,11 @@ let mapleader=" "
 
 " Set colorscheme
 " set t_Co=256
-colorscheme gruvbox
-" set background=dark
-let g:gruvbox_contrast_dark = "soft"
+"colorscheme solarized8
+"set background=dark
+" let g:gruvbox_contrast_dark = "soft"
+set background=dark
+autocmd vimenter * ++nested colorscheme solarized8_high
 
 " --------------- " 
 " Config airline  "
@@ -63,7 +68,7 @@ let g:airline_right_sep = ''
 "
 " Set theme
 "
-let g:airline_theme='gruvbox'
+let g:airline_theme='solarized'
 
 "
 " Always show tabs
