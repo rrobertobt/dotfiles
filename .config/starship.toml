@@ -1,19 +1,19 @@
-# Don't print a new line at the start of the prompt 
-add_newline = false
+# Print a new line at the start of the prompt 
+add_newline = true
 
 format = """
-$username$directory$git_branch$git_status$git_commit$nodejs
+$username$hostname$directory$git_branch$git_status$nodejs$python$time
 $cmd_duration$status$character
 """
 
 [directory]
 format = '[$path]($style)[$read_only]($read_only_style) '
-read_only = " [ read only]"
+read_only = " "
 read_only_style = "bold yellow"
-style = "blue bold"
+style = "cyan bold"
 truncation_length = 3
-truncate_to_repo = false
-truncation_symbol = ".../"
+truncate_to_repo = true
+truncation_symbol = ''
 
 [git_status]
 staged = '[+](bold green)'
@@ -22,7 +22,7 @@ deleted = '[✘](bold red)'
 ahead = '[⇡](bold red)'
 behind = '[⇣](bold red)'
 diverged = '[⇕](bold red)'
-renamed = '[»](bold red)'
+renamed = '[»](bold yellow)'
 conflicted = '[=](bold red)'
 format = '([\[$all_status$ahead_behind\]]($style)) '
 style = "bold red"
@@ -30,48 +30,10 @@ style = "bold red"
 [git_commit]
 commit_hash_length = 4
 
-[python]
-symbol = " "
-scan_for_pyfiles = true
-
-[dart]
-symbol = " "
-
-[docker]
-symbol = " "
-
-[git_branch]
-symbol = " "
-format = "on [$symbol$branch]($style) "
-
-[hg_branch]
-symbol = " "
-
-[java]
-symbol = " "
-
-[memory_usage]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-disabled = true
-
-[php]
-symbol = " "
-
-[ruby]
-symbol = " "
-
-[rust]
-symbol = " "
 
 [cmd_duration]
 min_time = 500
-format = "took [$duration ](bold yellow)"
+format = "[took](bold white) [$duration ](bold yellow)"
 
 [status]
 format = '[\[$int\]]($style)'
@@ -81,27 +43,28 @@ disabled = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[\\$](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[ \\$](bold red)"
+success_symbol = "[❯](green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[ ❯](red)"
 
 
 [time]
-disabled = false
-style = "bold yellow"
-format = '@[$time]($style)'
+disabled = true
+style = "bold blue"
+format = '@[$time]($style) '
 time_format = "%H:%M"
+use_12hr = true
 
 [hostname]
-ssh_only = false
-format = "[$hostname]($style)"
-style = "bold dimmed green"
+ssh_only = true
+format = "[$hostname]($style) "
+style = "bold cyan"
 
 [line_break]
 disabled = false
 
 [username]
-show_always = true
-format = "[$user]($style):"
+show_always = false
+format = "as [$user]($style) in "
 style_user = "bold yellow"
 
 
