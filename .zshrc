@@ -119,6 +119,7 @@ alias sysinfo="inxi -Fazy"
 # Navigation
 # ---------------------  
 alias dotfiles="cd ~/.dotfiles"
+alias bk="cd -"
 # ---------------------           
                                   
                                   
@@ -135,6 +136,7 @@ alias cp="cp -i"
 # Text editing
 # ---------------------
 alias vim="nvim"                                                                         
+alias cat="bat"
 # ---------------------                                                                  
                                                                                          
                                                                                          
