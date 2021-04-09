@@ -1,9 +1,7 @@
 # Print a new line at the start of the prompt 
 add_newline = true
 
-format = """
-$username$hostname$directory$git_branch$git_status$nodejs$python$time
-$cmd_duration$status$character
+format = """$all
 """
 
 [directory]
@@ -15,16 +13,23 @@ truncation_length = 3
 truncate_to_repo = true
 truncation_symbol = ''
 
+
+
 [git_status]
-staged = '[+](bold green)'
-untracked = '[?](bold blue)'
-deleted = '[✘](bold red)'
-ahead = '[⇡](bold red)'
-behind = '[⇣](bold red)'
-diverged = '[⇕](bold red)'
-renamed = '[»](bold yellow)'
-conflicted = '[=](bold red)'
-format = '([\[$all_status$ahead_behind\]]($style)) '
+
+# This settings look like:
+# .dotfiles on  master [!(3)]
+
+staged = '[+\([$count](bold green)\)](bold green)' 
+untracked = '[?\([$count](bold blue)\)](bold blue)'
+modified = '[!\([$count](bold cyan)\)](bold cyan)'
+deleted = '[✘\([$count](bold red)\)](bold red)'
+ahead = '[⇡\([$count](bold red)\)](bold red)'
+behind = '[⇣\([$count](bold red)\)](bold red)'
+diverged = '[⇕\([$count](bold red)\)](bold red)'
+renamed = '[»\([$count](bold yellow)\)](bold yellow)'
+conflicted = '[≠\([$count](bold red)\)](bold red)'
+format = '([\[$all_status$ahead_behind\]]($style) )'
 style = "bold red"
 
 [git_commit]

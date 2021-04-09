@@ -6,12 +6,14 @@
 # Powerlevel10k's prompt and instant prompt
 # 
 # set "ZSH_THEME" to "powerlevel10k/powerlevel10k"
+#
+# Comment if using other prompt
 # ---------------------
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+#fi
 
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 # ---------------------
 
 
@@ -21,7 +23,7 @@ fi
 # comment "ZSH_THEME" if using this prompt
 # ---------------------
 
-#eval "$(starship init zsh)"
+eval "$(starship init zsh)"
 
 # ---------------------
 
@@ -34,7 +36,7 @@ fi
 
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="powerlevel10k/powerlevel10k"
 
 COMPLETION_WAITING_DOTS="true"
 
