@@ -1,9 +1,73 @@
+# ==================
+# My personal starship prompt config
+#
+# To learn more about this prompt
+# go to https://starship.rs
+# ==================
+
+
 # Print a new line at the start of the prompt 
 add_newline = true
 
-format = """$all
-"""
 
+# Format/style of the prompt
+format = """
+$username\
+$hostname\
+$shlvl\
+$kubernetes\
+$directory\
+$git_branch\
+$git_commit\
+$git_state\
+$git_status\
+$hg_branch\
+$docker_context\
+$package\
+$cmake\
+$dart\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$golang\
+$helm\
+$java\
+$julia\
+$kotlin\
+$nim\
+$nodejs\
+$ocaml\
+$perl\
+$php\
+$purescript\
+$python\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vagrant\
+$zig\
+$nix_shell\
+$conda\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$env_var\
+$crystal\
+$custom\
+$cmd_duration\
+$line_break\
+$lua\
+$jobs\
+$battery\
+$time\
+$shell\
+$status$character"""
+
+# ====== Directory module ======
 [directory]
 format = '[$path]($style)[$read_only]($read_only_style) '
 read_only = " "
@@ -14,17 +78,16 @@ truncate_to_repo = true
 truncation_symbol = ''
 
 
-
+# ====== git modules ======
 [git_status]
-
 # This settings look like:
-# .dotfiles on  master [!(3)]
+# .dotfiles on  master [!(3)?(5)]	
 
 staged = '[+\([$count](bold green)\)](bold green)' 
 untracked = '[?\([$count](bold blue)\)](bold blue)'
 modified = '[!\([$count](bold cyan)\)](bold cyan)'
 deleted = '[✘\([$count](bold red)\)](bold red)'
-ahead = '[⇡\([$count](bold red)\)](bold red)'
+ahead = '[⇡\([$count](bold yellow)\)](bold yellow)'
 behind = '[⇣\([$count](bold red)\)](bold red)'
 diverged = '[⇕\([$count](bold red)\)](bold red)'
 renamed = '[»\([$count](bold yellow)\)](bold yellow)'
@@ -34,24 +97,35 @@ style = "bold red"
 
 [git_commit]
 commit_hash_length = 4
+tag_symbol = "🔖 "
+only_detached = true
+
+[git_branch]
+symbol = " "
 
 
+# ====== exec time of a command module======
 [cmd_duration]
 min_time = 500
-format = "[took](bold white) [$duration ](bold yellow)"
+format = "...[took](bold white) [$duration ](bold yellow)"
 
+# ====== exit status of previous command module ======
 [status]
-format = '[\[$int\]]($style)'
-style = 'bg:red bold'
-map_symbol = false
+style = "bg:red"
+symbol = "🔴"
+sigint_symbol = ""
+format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+map_symbol = true
 disabled = false
 
+
+# ====== prompt character ======
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯](green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[ ❯](red)"
+success_symbol = "[❯](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[❯](bold red)"
 
-
+# ====== current time module ======
 [time]
 disabled = true
 style = "bold blue"
@@ -59,6 +133,7 @@ format = '@[$time]($style) '
 time_format = "%H:%M"
 use_12hr = true
 
+# ====== hostname module ======
 [hostname]
 ssh_only = true
 format = "[$hostname]($style) "
@@ -73,6 +148,78 @@ format = "as [$user]($style) in "
 style_user = "bold yellow"
 
 
+# ====== langs configs ======
+[aws]
+symbol = "  "
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
+
+
+[docker]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+
+
+[golang]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[perl]
+symbol = " "
+
+[php]
+symbol = " "
+
+[python]
+symbol = " "
+
+[ruby]
+symbol = " "
+
+[rust]
+symbol = " "
+
+[scala]
+symbol = " "
+
+[swift]
+symbol = "ﯣ "
 
 
 
