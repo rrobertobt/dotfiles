@@ -84,6 +84,7 @@ truncation_symbol = ''
 # .dotfiles on  master [!(3)?(5)]	
 
 staged = '[+\([$count](bold green)\)](bold green)' 
+stashed = '[\$\([$count](bold green)\)](bold red)'
 untracked = '[?\([$count](bold blue)\)](bold blue)'
 modified = '[!\([$count](bold cyan)\)](bold cyan)'
 deleted = '[✘\([$count](bold red)\)](bold red)'
