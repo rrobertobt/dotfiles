@@ -112,9 +112,10 @@ format = "...[took](bold white) [$duration ](bold yellow)"
 
 # ====== exit status of previous command module ======
 [status]
-style = "bg:red"
-symbol = "🔴"
-sigint_symbol = ""
+style = "bg:bright-white bold red"
+symbol = ""
+sigint_symbol = ""
+not_found_symbol = ""
 format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
 map_symbol = true
 disabled = false
@@ -147,6 +148,7 @@ disabled = false
 show_always = false
 format = "as [$user]($style) in "
 style_user = "bold yellow"
+style_root = "bold bright-red"
 
 
 # ====== langs configs ======
