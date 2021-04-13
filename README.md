@@ -19,5 +19,17 @@ _Quick links:_
 - **Scripts**
   - [Color scripts](https://github.com/rrobertobt/dotfiles/tree/master/scripts/color_scripts)
 
-## Gallery, see how my configs look  
+## Gallery, see how my configs look
+**starship prompt**
+- Basic use
+
+![basic](https://raw.githubusercontent.com/rrobertobt/dotfiles/master/screenshots/basic.gif)
+- Git
+
+![git](https://raw.githubusercontent.com/rrobertobt/dotfiles/master/screenshots/git.gif)
+- Showing errors
+
+![errors](https://raw.githubusercontent.com/rrobertobt/dotfiles/master/screenshots/errors.gif)
+
+**powerlevel10k zsh teme**
 ## Software I use
