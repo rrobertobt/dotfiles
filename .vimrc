@@ -21,6 +21,10 @@ Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-monokai'
 Plug 'dracula/vim', { 'as': 'dracula' } 
 Plug 'arcticicestudio/nord-vim'
+Plug 'lifepillar/vim-solarized8'
+Plug 'rakr/vim-one'
+Plug 'connorholyday/vim-snazzy'
+
 " IDE-like
 
 Plug 'easymotion/vim-easymotion'
@@ -31,10 +35,6 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tpope/vim-surround'
 Plug 'mcchrish/nnn.vim'
-Plug 'rakr/vim-one'
-Plug 'lifepillar/vim-solarized8'
-Plug 'connorholyday/vim-snazzy'
-
 call plug#end()
 
 " Config nerd tree
@@ -43,11 +43,17 @@ let mapleader=" "
 
 " Set colorscheme
 " set t_Co=256
-"colorscheme solarized8
+" GRUVBOX Theme
+let g:gruvbox_italic=1
+let g:gruvbox_bold=1
+let g:gruvbox_transparent_bg=1
+colorscheme gruvbox
 "set background=dark
-" let g:gruvbox_contrast_dark = "soft"
+let g:gruvbox_contrast_dark = "medium"
 set background=dark
-autocmd vimenter * ++nested colorscheme solarized8_high
+
+" solarized
+" autocmd vimenter * ++nested colorscheme solarized8_high
 
 " --------------- " 
 " Config airline  "
@@ -62,13 +68,13 @@ let g:airline#extensions#tabline#right_alt_sep = ''
 " Enable powerline fonts
 "
 let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 
 "
 " Set theme
 "
-let g:airline_theme='solarized'
+let g:airline_theme='gruvbox'
 
 "
 " Always show tabs
