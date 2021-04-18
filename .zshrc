@@ -42,7 +42,13 @@ COMPLETION_WAITING_DOTS="true"
 
 DISABLE_AUTO_TITLE="false"
 
-plugins=(git fast-syntax-highlighting zsh-autosuggestions)
+plugins=(
+  git
+  fast-syntax-highlighting
+  zsh-autosuggestions
+  dnf
+  sudo
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,12 +99,13 @@ alias cls="clear"
                                                   
 # ---------------------                           
 # Package managing (dnf)
+# Use oh-my-zsh's dnf plugin
 # ---------------------
-alias dinstall="sudo dnf install"
-alias dremove="sudo dnf remove"
-alias dupdate="sudo dnf update"
-alias dupgrade="sudo dnf upgrade"
-alias dsearch="dnf search"
+# alias dinstall="sudo dnf install"
+# alias dremove="sudo dnf remove"
+# alias dupdate="sudo dnf update"
+# alias dupgrade="sudo dnf upgrade"
+# alias dsearch="dnf search"
 # ---------------------                           
                                                   
                                                   

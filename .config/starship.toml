@@ -33,7 +33,7 @@ truncation_symbol = ''
 # .dotfiles on  master [!(3)?(5)]	
 
 staged = '[+\([$count](bold green)\)](bold green)' 
-stashed = '[\$\([$count](bold green)\)](bold red)'
+stashed = '[\$\([$count](bold red)\)](bold red)'
 untracked = '[?\([$count](bold blue)\)](bold blue)'
 modified = '[!\([$count](bold cyan)\)](bold cyan)'
 deleted = '[✘\([$count](bold red)\)](bold red)'
@@ -43,7 +43,7 @@ diverged = '[⇕\([$count](bold red)\)](bold red)'
 renamed = '[»\([$count](bold yellow)\)](bold yellow)'
 conflicted = '[≠\([$count](bold red)\)](bold red)'
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "bold red"
+style = "bold bright-white"
 
 [git_commit]
 commit_hash_length = 4
@@ -87,7 +87,7 @@ use_12hr = true
 # ====== hostname module ======
 [hostname]
 ssh_only = true
-format = "[$hostname]($style) "
+format = "[$hostname]($style) at "
 style = "bold cyan"
 
 [line_break]
