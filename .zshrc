@@ -29,6 +29,64 @@ eval "$(starship init zsh)"
 
 # ========================
 
+# =====================
+# Functions
+# =====================
+
+# ---------------------
+# Switch between shells
+# ---------------------
+function tozsh {
+	if [ -x "$(command -v chsh)" ]; then
+		sudo chsh -s `which zsh` $USER
+		echo "Now log out and log back in..."
+	elif [ -x "$(command -v lchsh)" ]; then
+		echo "Using 'lchsh', enter manually the path of the shell...\n"
+		sudo lchsh $USER
+		echo "Now log out and log back in..."
+	elif [ -x "$(command -v usermod)" ]; then
+		sudo usermod -s /usr/bin/zsh $USER
+		echo "Now log out and log back in..."
+	else
+		echo "No command found, can't change shell"
+	fi
+}
+
+function tobash {
+	if [ -x "$(command -v chsh)" ]; then
+		sudo chsh -s /bin/bash $USER 
+		echo "Now log out and log back in..."
+	elif [ -x "$(command -v lchsh)" ]; then
+		echo "Using 'lchsh', enter manually the path of the shell...\n"
+		sudo lchsh $USER
+		echo "Now log out and log back in..."
+	elif [ -x "$(command -v usermod)" ]; then
+		sudo usermod -s /bin/bash $USER
+		echo "Now log out and log back in..."
+	else
+		echo "No command found, can't change shell"
+	fi
+}
+
+function tofish {
+	if [ -x "$(command -v chsh)" ]; then
+		sudo chsh -s `which fish` $USER
+		echo "Now log out and log back in..."
+	elif [ -x "$(command -v lchsh)" ]; then
+		echo "Using 'lchsh', enter manually the path of the shell...\n"
+		sudo lchsh $USER
+		echo "Now log out and log back in..."
+	elif [ -x "$(command -v usermod)" ]; then
+		sudo usermod -s /usr/bin/fish $USER
+		echo "Now log out and log back in..."
+	else
+		echo "No command found, can't change shell"
+	fi
+}
+# ---------------------s
+
+# =====================
+
 
 # =====================
 # oh-my-zsh and zsh settings
@@ -156,15 +214,6 @@ alias cat="bat"
 alias tree="exa -T --color=always --color-scale --icons"                                 
 alias ls="exa -lh --color=always --git --color-scale --group-directories-first --icons" 
 alias la="exa -lha --color=always --git --color-scale --group-directories-first --icons"
-# ---------------------
-
-
-# ---------------------
-# Switch between shells (doesn't work on Red Hat distros, use lchsh)
-# ---------------------  
-alias tobash="sudo chsh $USER -s `which bash` && echo 'Now log out...'"
-alias tozsh="sudo chsh $USER -s `which zsh` && echo 'Now log out...'"
-alias tofish="sudo chsh $USER -s `which fish` && echo 'Now log out...'"
 # ---------------------
 
 # =====================
