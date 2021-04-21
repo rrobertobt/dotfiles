@@ -48,7 +48,7 @@ function tozsh {
 		sudo usermod -s /usr/bin/zsh $USER
 		echo "Now log out and log back in..."
 	else
-		echo "No command found, can't change shell"
+		echo "No command found, couldn't change shell"
 	fi
 }
 
@@ -64,7 +64,7 @@ function tobash {
 		sudo usermod -s /bin/bash $USER
 		echo "Now log out and log back in..."
 	else
-		echo "No command found, can't change shell"
+		echo "No command found, couldn't change shell"
 	fi
 }
 
@@ -80,7 +80,7 @@ function tofish {
 		sudo usermod -s /usr/bin/fish $USER
 		echo "Now log out and log back in..."
 	else
-		echo "No command found, can't change shell"
+		echo "No command found, couldn't change shell"
 	fi
 }
 # ---------------------s
@@ -209,7 +209,7 @@ alias cat="bat"
                                                                                          
                                                                                          
 # ---------------------                                                                  
-# Improved 'ls'
+# Better 'ls'
 # ---------------------  
 alias tree="exa -T --color=always --color-scale --icons"                                 
 alias ls="exa -lh --color=always --git --color-scale --group-directories-first --icons" 
@@ -246,8 +246,7 @@ alias la="exa -lha --color=always --git --color-scale --group-directories-first 
 # ---------------------
 # Scripts in path
 # ---------------------
-export PATH="$HOME/.dotfiles/Scripts:$PATH"
-export PATH="$HOME/Scripts:$PATH"
+export PATH="$HOME/.dotfiles/scripts:$PATH"
 # ---------------------
 
 # ---------------------
@@ -257,8 +256,6 @@ export PATH="$HOME/Scripts:$PATH"
 #[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 # ---------------------
 # ========================
-
-
 
 
 # ========================
