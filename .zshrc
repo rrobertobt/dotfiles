@@ -39,14 +39,29 @@ eval "$(starship init zsh)"
 function tozsh {
 	if [ -x "$(command -v chsh)" ]; then
 		sudo chsh -s `which zsh` $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	elif [ -x "$(command -v lchsh)" ]; then
-		echo "Using 'lchsh', enter manually the path of the shell...\n"
+		echo "\e[1;4mUsing \e[32m'lchsh'\e[0;1;4m, enter manually the path of the shell...\n\e[0m"
 		sudo lchsh $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	elif [ -x "$(command -v usermod)" ]; then
 		sudo usermod -s /usr/bin/zsh $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	else
 		echo "No command found, couldn't change shell"
 	fi
@@ -55,14 +70,29 @@ function tozsh {
 function tobash {
 	if [ -x "$(command -v chsh)" ]; then
 		sudo chsh -s /bin/bash $USER 
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	elif [ -x "$(command -v lchsh)" ]; then
-		echo "Using 'lchsh', enter manually the path of the shell...\n"
+		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
 		sudo lchsh $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	elif [ -x "$(command -v usermod)" ]; then
 		sudo usermod -s /bin/bash $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	else
 		echo "No command found, couldn't change shell"
 	fi
@@ -71,14 +101,29 @@ function tobash {
 function tofish {
 	if [ -x "$(command -v chsh)" ]; then
 		sudo chsh -s `which fish` $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	elif [ -x "$(command -v lchsh)" ]; then
-		echo "Using 'lchsh', enter manually the path of the shell...\n"
+		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
 		sudo lchsh $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	elif [ -x "$(command -v usermod)" ]; then
 		sudo usermod -s /usr/bin/fish $USER
-		echo "Now log out and log back in..."
+		if [ $? -eq 1 ]
+		then
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
+		else
+			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		fi
 	else
 		echo "No command found, couldn't change shell"
 	fi
