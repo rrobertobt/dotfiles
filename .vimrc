@@ -48,6 +48,7 @@ let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_transparent_bg=1
 colorscheme gruvbox
+" hi Normal guibg=NONE ctermbg=NONE
 "set background=dark
 let g:gruvbox_contrast_dark = "medium"
 set background=dark
@@ -91,3 +92,5 @@ nmap <Leader>nt :NERDTreeFind<CR>
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+
+hi Normal guibg=NONE ctermbg=NONE
