@@ -42,7 +42,7 @@ behind = '[⇣\([$count](red)\)](bold red)'
 diverged = '[⇕\([$count](red)\)](bold red)'
 renamed = '[»\([$count](white)\)](bold white)'
 conflicted = '[≠\([$count](red)\)](bold red)'
-format = '([\[$all_status$ahead_behind\]]($style) )'
+format = '([$all_status$ahead_behind]($style) )'
 style = "bold bright-red"
 
 [git_commit]
@@ -51,7 +51,9 @@ tag_symbol = "🔖 "
 only_detached = true
 
 [git_branch]
-symbol = " "
+symbol = " "
+format = "on [$symbol$branch]($style) "
+style = "bold purple"
 
 
 # ====== exec time of a command module======
@@ -65,7 +67,7 @@ style = "bg:bright-red bold white"
 symbol = ""
 sigint_symbol = ""
 not_found_symbol = ""
-format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+format = '[\[$symbol $common_meaning$signal_name$int\]]($style) '
 map_symbol = true
 disabled = false
 
