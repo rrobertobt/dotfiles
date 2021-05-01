@@ -24,6 +24,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'lifepillar/vim-solarized8'
 Plug 'rakr/vim-one'
 Plug 'connorholyday/vim-snazzy'
+Plug 'owozsh/amora'
 
 " IDE-like
 
@@ -48,8 +49,6 @@ let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_transparent_bg=1
 colorscheme gruvbox
-" hi Normal guibg=NONE ctermbg=NONE
-"set background=dark
 let g:gruvbox_contrast_dark = "medium"
 set background=dark
 
