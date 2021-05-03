@@ -39,28 +39,28 @@ fi
 function tozsh {
 	if [ -x "$(command -v chsh)" ]; then
 		sudo chsh -s `which zsh` $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	elif [ -x "$(command -v lchsh)" ]; then
-		echo "\e[1;4mUsing \e[32m'lchsh'\e[0;1;4m, enter manually the path of the shell...\n\e[0m"
+		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
 		sudo lchsh $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	elif [ -x "$(command -v usermod)" ]; then
 		sudo usermod -s /usr/bin/zsh $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	else
 		echo "No command found, couldn't change shell"
@@ -70,28 +70,28 @@ function tozsh {
 function tobash {
 	if [ -x "$(command -v chsh)" ]; then
 		sudo chsh -s /bin/bash $USER 
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	elif [ -x "$(command -v lchsh)" ]; then
 		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
 		sudo lchsh $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	elif [ -x "$(command -v usermod)" ]; then
 		sudo usermod -s /bin/bash $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	else
 		echo "No command found, couldn't change shell"
@@ -101,28 +101,28 @@ function tobash {
 function tofish {
 	if [ -x "$(command -v chsh)" ]; then
 		sudo chsh -s `which fish` $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	elif [ -x "$(command -v lchsh)" ]; then
 		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
 		sudo lchsh $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	elif [ -x "$(command -v usermod)" ]; then
 		sudo usermod -s /usr/bin/fish $USER
-		if [ $? -eq 1 ]
+		if [ $? -eq 0 ]
 		then
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		else
 			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
+		else
+			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
 		fi
 	else
 		echo "No command found, couldn't change shell"
@@ -197,19 +197,7 @@ fi
 alias zconfig="nvim ~/.zshrc"                   
 alias fconfig="nvim ~/.config/fish/config.fish"
 alias cls="clear"                                 
-# ---------------------                           
-                                                  
-                                                  
-# ---------------------                           
-# Package managing (dnf)
-# Use oh-my-zsh's dnf plugin
-# ---------------------
-# alias dinstall="sudo dnf install"
-# alias dremove="sudo dnf remove"
-# alias dupdate="sudo dnf update"
-# alias dupgrade="sudo dnf upgrade"
-# alias dsearch="dnf search"
-# ---------------------                           
+# ---------------------                                                 
                                                   
                                                   
 # ---------------------                           
@@ -312,3 +300,4 @@ export PATH="$HOME/.dotfiles/scripts:$PATH"
 # ---------------------
 # echo "Last login:`last -2 -R $USER | head -2 | cut -c 20- | sed -n '1!p'`"
 # ---------------------
+
