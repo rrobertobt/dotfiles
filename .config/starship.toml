@@ -12,8 +12,8 @@ add_newline = true
 
 # Format/style of the prompt
 format = """
-$username$hostname$shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$time$shell$status
-$cmd_duration$character
+$username$hostname$shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$time$shell
+$cmd_duration$status$character
 """
 
 # ====== Directory module ======
@@ -51,8 +51,9 @@ tag_symbol = "🔖 "
 only_detached = true
 
 [git_branch]
-symbol = " "
-format = "on [$symbol$branch]($style) "
+symbol = ""
+#symbol = " "
+format = "[$symbol$branch]($style) "
 style = "bold 242"
 
 
@@ -63,11 +64,12 @@ format = "[$duration ](yellow)"
 
 # ====== exit status of previous command module ======
 [status]
-style = "bg:red bold white"
-symbol = ""
-sigint_symbol = ""
-not_found_symbol = ""
-format = '[\[$symbol $common_meaning$signal_name$maybe_int\]]($style) '
+style = "red"
+#style = "bg:red bold white"
+symbol = "" #
+sigint_symbol = "" #
+not_found_symbol = "" #
+format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
 map_symbol = true
 disabled = false
 
@@ -75,8 +77,8 @@ disabled = false
 # ====== prompt character ======
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯](bold purple)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[❯](red)"
+success_symbol = "[➜](bold purple)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+error_symbol = "[➜](red)" #✗
 
 # ====== current time module ======
 [time]
