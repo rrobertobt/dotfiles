@@ -33,103 +33,6 @@ eval "$(starship init zsh)"
 # Functions
 # =====================
 
-# ---------------------
-# Switch between shells
-# ---------------------
-function tozsh {
-	if [ -x "$(command -v chsh)" ]; then
-		sudo chsh -s `which zsh` $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	elif [ -x "$(command -v lchsh)" ]; then
-		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
-		sudo lchsh $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	elif [ -x "$(command -v usermod)" ]; then
-		sudo usermod -s /usr/bin/zsh $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	else
-		echo "No command found, couldn't change shell"
-	fi
-}
-
-function tobash {
-	if [ -x "$(command -v chsh)" ]; then
-		sudo chsh -s /bin/bash $USER 
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	elif [ -x "$(command -v lchsh)" ]; then
-		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
-		sudo lchsh $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	elif [ -x "$(command -v usermod)" ]; then
-		sudo usermod -s /bin/bash $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	else
-		echo "No command found, couldn't change shell"
-	fi
-}
-
-function tofish {
-	if [ -x "$(command -v chsh)" ]; then
-		sudo chsh -s `which fish` $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	elif [ -x "$(command -v lchsh)" ]; then
-		echo "\e[1mUsing \e[32m'lchsh'\e[0;1m, enter manually the path of the shell...\n\e[0m"
-		sudo lchsh $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	elif [ -x "$(command -v usermod)" ]; then
-		sudo usermod -s /usr/bin/fish $USER
-		if [ $? -eq 0 ]
-		then
-			echo "\n\e[1;32mShell seems to have changed successful, now logout and log back in...\e[0m"
-		else
-			echo "\n\e[1;31mAn error ocurred, couldn't change shell\e[0m"
-		fi
-	else
-		echo "No command found, couldn't change shell"
-	fi
-}
-# ---------------------s
-
 # =====================
 
 
@@ -140,6 +43,7 @@ function tofish {
 export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="powerlevel10k/powerlevel10k"
+#ZSH_THEME="robbyrussell"
 
 COMPLETION_WAITING_DOTS="true"
 
@@ -205,7 +109,8 @@ alias cls="clear"
 # ---------------------
 alias pacinstall="sudo pacman -S"                
 alias pacremove="sudo pacman -Rn"                 
-alias pacupdate="sudo pacman -Syyu"               
+alias pacupdate="sudo pacman -Syyu"
+alias upall="dnfu && flatpak upgrade"
 # ---------------------
 
 
@@ -237,7 +142,7 @@ alias cp="cp -i"
 # Text editing
 # ---------------------
 alias vim="nvim"                                                                         
-alias cat="bat"
+alias cat="bat --theme=gruvbox"
 # ---------------------                                                                  
                                                                                          
                                                                                          
@@ -292,7 +197,7 @@ export PATH="$HOME/.dotfiles/scripts:$PATH"
 # ---------------------
 # asdf
 # ---------------------
-#. $HOME/.asdf/asdf.sh 
+. $HOME/.asdf/asdf.sh 
 # ---------------------
 # ========================
 
