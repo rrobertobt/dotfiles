@@ -24,6 +24,7 @@
 # ---------------------
 
 eval "$(starship init zsh)"
+#eval "$(oh-my-posh init zsh --config ~/.poshthemes/chips.omp.json)"
 
 # ---------------------
 
@@ -44,10 +45,6 @@ export ZSH=$HOME/.oh-my-zsh
 
 #ZSH_THEME="powerlevel10k/powerlevel10k"
 #ZSH_THEME="robbyrussell"
-
-COMPLETION_WAITING_DOTS="true"
-
-DISABLE_AUTO_TITLE="false"
 
 plugins=(
   git
@@ -117,7 +114,9 @@ alias upall="dnfu && flatpak upgrade"
 # ---------------------           
 # System
 # ---------------------
-alias sysinfo="inxi -Fazy"        
+alias sysinfo="inxi -Fazy"
+alias set-nvidia="sudo mv /etc/X11/xorg.conf.d/nvidia.conf.bak /etc/X11/xorg.conf.d/nvidia.conf && gnome-session-quit"
+alias set-hybrid="sudo mv /etc/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf.bak && gnome-session-quit"
 # ---------------------           
                                   
                                   
@@ -125,7 +124,6 @@ alias sysinfo="inxi -Fazy"
 # Navigation
 # ---------------------  
 alias dotfiles="cd ~/.dotfiles"
-alias bk="cd -"
 # ---------------------           
                                   
                                   
@@ -142,7 +140,7 @@ alias cp="cp -i"
 # Text editing
 # ---------------------
 alias vim="nvim"                                                                         
-alias cat="bat --theme=gruvbox"
+alias cat="bat --theme=Monokai Extended Light"
 # ---------------------                                                                  
                                                                                          
                                                                                          
@@ -150,8 +148,8 @@ alias cat="bat --theme=gruvbox"
 # Better 'ls'
 # ---------------------  
 alias tree="exa -T --color=always --color-scale --icons"                                 
-alias ls="exa -lh --color=always --git --color-scale --group-directories-first --icons" 
-alias la="exa -lha --color=always --git --color-scale --group-directories-first --icons"
+alias ls="exa -lh --color=always --color-scale --group-directories-first --icons" 
+alias la="exa -lha --color=always --color-scale --group-directories-first --icons"
 # ---------------------
 
 # =====================
@@ -164,24 +162,6 @@ alias la="exa -lha --color=always --git --color-scale --group-directories-first 
 # ========================
 
 # ---------------------
-# ruby
-# ---------------------
-# rbenv
-# export PATH="$HOME/.dev/.rbenv/bin:$PATH"
-# eval "$(rbenv init -)"
-
-# ruby build
-# export PATH="$HOME/.dev/.rbenv/plugins/ruby-build/bin:$PATH"
-# ---------------------
-
-
-# ---------------------
-# Flutter
-# ---------------------
-#export PATH="$HOME/.dev/flutter/bin:$PATH"
-# ---------------------
-
-# ---------------------
 # Scripts in path
 # ---------------------
 export PATH="$HOME/.dotfiles/scripts:$PATH"
@@ -190,26 +170,12 @@ export PATH="$HOME/.dotfiles/scripts:$PATH"
 # ---------------------
 # nvm
 # ---------------------
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # ---------------------
 
-# ---------------------
-# asdf
-# ---------------------
-. $HOME/.asdf/asdf.sh 
-# ---------------------
-# ========================
-
-
+# Load Angular CLI autocompletion.
+source <(ng completion script)
 
 # ========================
-# Extras/others
-# ========================
-
-# ---------------------
-# Show last login
-# ---------------------
-# echo "Last login:`last -2 -R $USER | head -2 | cut -c 20- | sed -n '1!p'`"
-# ---------------------
-

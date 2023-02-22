@@ -49,8 +49,8 @@ let g:gruvbox_italic=1
 let g:gruvbox_bold=1
 let g:gruvbox_transparent_bg=1
 colorscheme gruvbox
-let g:gruvbox_contrast_dark = "medium"
-set background=dark
+let g:gruvbox_contrast_light = "medium"
+set background=light
 
 " solarized
 " autocmd vimenter * ++nested colorscheme solarized8_high
@@ -92,4 +92,4 @@ nmap <Leader>nt :NERDTreeFind<CR>
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
 
-hi Normal guibg=NONE ctermbg=NONE
+" hi Normal guibg=NONE ctermbg=NONE

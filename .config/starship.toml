@@ -7,13 +7,20 @@
 
 
 # Print a new line at the start of the prompt 
-add_newline = true
+add_newline = false
 
 
 # Format/style of the prompt
+# def format
+# format = """
+# $username$hostname$shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$time$shell
+# $cmd_duration$status$character
+# """
+
 format = """
-$username$hostname$shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$time$shell
-$cmd_duration$status$character
+$username$hostname
+$shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$shell
+$cmd_duration$status$time$character
 """
 
 # ====== Directory module ======
@@ -36,10 +43,10 @@ staged = '[+\([$count](green)\)](bold green)'
 stashed = '[\$\([$count](red)\)](bold red)'
 untracked = '[?\([$count](blue)\)](bold blue)'
 modified = '[!\([$count](yellow)\)](bold yellow)'
-deleted = '[✘\([$count](red)\)](bold red)'
+deleted = '[\([$count](red)\)](bold red)'
 ahead = '[⇡\([$count](yellow)\)](bold yellow)'
 behind = '[⇣\([$count](red)\)](bold red)'
-diverged = '[⇕\([$count](red)\)](bold red)'
+diverged = '[⇕\([DIV](red)\)](bold red)'
 renamed = '[»\([$count](white)\)](bold white)'
 conflicted = '[≠\([$count](red)\)](bold red)'
 format = '([$all_status$ahead_behind]($style) )'
@@ -51,20 +58,20 @@ tag_symbol = "🔖 "
 only_detached = true
 
 [git_branch]
-symbol = ""
-#symbol = " "
+#symbol = ""
+symbol = " "
 format = "[$symbol$branch]($style) "
-style = "bold 242"
+style = "242 bold"
 
 
 # ====== exec time of a command module======
 [cmd_duration]
-min_time = 500
+min_time = 1000
 format = "[$duration ](yellow)"
 
 # ====== exit status of previous command module ======
 [status]
-style = "red"
+style = "red bold"
 #style = "bg:red bold white"
 symbol = "" #
 sigint_symbol = "" #
@@ -75,18 +82,21 @@ disabled = false
 
 
 # ====== prompt character ======
-# Replace the "❯" symbol in the prompt with "➜"
+# Replace the "❯" symbol in the prompt with "➜" \\$
 [character]                            # The name of the module we are configuring is "character"
-success_symbol = "[❯](bold purple)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
-error_symbol = "[❯](red)" #✗
+#success_symbol = "[\\$](bold purple)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+#error_symbol = "[\\$](bold red)" #✗
+
+success_symbol = "[❯](bold purple)"
+error_symbol = "[❯](bold red)" #✗
 
 # ====== current time module ======
 [time]
 disabled = true
-style = "bold blue"
-format = '@[$time]($style) '
-time_format = "%H:%M"
-use_12hr = true
+style = "blue"
+format = '[$time]($style) '
+time_format = "%H:%M:%S"
+use_12hr = false
 
 # ====== hostname module ======
 [hostname]
@@ -99,7 +109,7 @@ disabled = false
 
 [username]
 show_always = false
-format = "as [$user]($style) in "
+format = "[$user]($style)"
 style_user = "bold yellow"
 style_root = "bold bright-red"
 

@@ -27,8 +27,8 @@ window:
   # must be at least `2`, while using a value of `0` for columns and lines will
   # fall back to the window manager's recommended size.
   dimensions:
-    columns: 120
-    lines: 26
+    columns: 130
+    lines: 30
 
   # Window position (changes require restart)
   #
@@ -109,7 +109,8 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Iosevka Term
+    # family: JetBrainsMono NF
+    family: SauceCodePro NFM
 
     # The `style` can be specified to pick a specific face.
     style: Regular
@@ -120,7 +121,7 @@ font:
     #
     # If the bold family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Term
+    family: SauceCodePro NFM
 
     # The `style` can be specified to pick a specific face.
     style: Bold
@@ -131,7 +132,7 @@ font:
     #
     # If the italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Term
+    family: SauceCodePro NFM
 
     # The `style` can be specified to pick a specific face.
     style: Italic
@@ -142,13 +143,13 @@ font:
     #
     # If the bold italic family is not specified, it will fall back to the
     # value specified for the normal font.
-    family: Iosevka Term
+    family: SauceCodePro NFM
 
     # The `style` can be specified to pick a specific face.
     style: Bold Italic
 
   # Point size
-  size: 12.5
+  size: 13
 
 
 
@@ -173,36 +174,36 @@ font:
   #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
-draw_bold_text_with_bright_colors: true
+draw_bold_text_with_bright_colors: false
 
 # Colors (Darkside from Gogh)
 colors:
   # Default colors
   primary:
-    background: '#121212'
-    foreground: '#a0a0a0'
+    background: '#FDF0ED'
+    foreground: '#1C1E26'
 
   # Normal colors
   normal:
-    black: '#1b1d1e'
-    red: '#f92672'
-    green: '#a6e22e'
-    yellow: '#fd971f'
-    blue: '#66d9ef'
-    magenta: '#9e6ffe'
-    cyan: '#5e7175'
-    white: '#ccccc6'
+    black: '#16161C'
+    red: '#DA103F'
+    green: '#1EB980'
+    yellow: '#F6661E'
+    blue: '#26BBD9'
+    magenta: '#EE64AE'
+    cyan: '#1D8991'
+    white: '#FADAD1'
 
   # Bright colors
   bright:
-    black: '#505354'
-    red: '#ff669d'
-    green: '#beed5f'
-    yellow: '#e6db74'
-    blue: '#66d9ef'
-    magenta: '#9e6ffe'
-    cyan: '#a3babf'
-    white: '#f8f8f2'
+    black: '#1A1C23'
+    red: '#F43E5C'
+    green: '#07DA8C'
+    yellow: '#F77D26'
+    blue: '#3FC6DE'
+    magenta: '#F075B7'
+    cyan: '#1EAEAE'
+    white: '#FDF0ED'
   # Default colors
   #primary:
   #  background: '#1d1f21'
