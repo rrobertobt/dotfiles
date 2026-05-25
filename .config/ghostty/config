@@ -1,0 +1,24 @@
+font-size = 15
+font-family = CaskaydiaCove Nerd Font Mono
+#font-family = JetBrains Mono Nerd Font Mono
+adjust-cell-width = -10%
+
+window-padding-x = 16
+window-padding-y = 10
+
+window-width = 120
+window-height = 32
+
+macos-titlebar-style = tabs
+
+#macos-icon = retro
+
+window-show-tab-bar = always
+
+theme = dark:Monokai Pro Ristretto,light:Monokai Pro Light Sun
+
+cursor-style = block
+shell-integration-features = no-cursor
+
+background-opacity = 0.96
+# background-blur = true

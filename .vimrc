@@ -21,11 +21,10 @@ Plug 'morhetz/gruvbox'
 Plug 'crusoexia/vim-monokai'
 Plug 'dracula/vim', { 'as': 'dracula' } 
 Plug 'arcticicestudio/nord-vim'
-Plug 'lifepillar/vim-solarized8'
 Plug 'rakr/vim-one'
 Plug 'connorholyday/vim-snazzy'
 Plug 'owozsh/amora'
-
+Plug 'projekt0n/github-nvim-theme'
 " IDE-like
 
 Plug 'easymotion/vim-easymotion'
@@ -45,16 +44,18 @@ let mapleader=" "
 " Set colorscheme
 " set t_Co=256
 " GRUVBOX Theme
-let g:gruvbox_italic=1
-let g:gruvbox_bold=1
-let g:gruvbox_transparent_bg=1
-colorscheme gruvbox
-let g:gruvbox_contrast_light = "medium"
-set background=light
+"let g:gruvbox_italic=1
+"let g:gruvbox_bold=1
+"let g:gruvbox_transparent_bg=1
+"colorscheme gruvbox
+"let g:gruvbox_contrast_light = "medium"
+"set background=light
 
 " solarized
 " autocmd vimenter * ++nested colorscheme solarized8_high
 
+" other
+colorscheme github_dark_default
 " --------------- " 
 " Config airline  "
 " --------------- "
@@ -74,7 +75,7 @@ let g:airline_right_sep = ''
 "
 " Set theme
 "
-let g:airline_theme='gruvbox'
+let g:airline_theme='github_dark'
 
 "
 " Always show tabs

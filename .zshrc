@@ -1,32 +1,9 @@
 # ========================
-# Initialize prompts (just use one at once)
+# Initialize prompts (and brew for Mac) (just use one prompt theme at once)
 # ========================
 
-# ---------------------
-# Powerlevel10k's prompt and instant prompt
-# 
-# set "ZSH_THEME" to "powerlevel10k/powerlevel10k"
-#
-# Comment if using other prompt
-# ---------------------
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
-#[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-# ---------------------
-
-
-# ---------------------
-# starship prompt
-#
-# comment "ZSH_THEME" if using this prompt
-# ---------------------
-
-eval "$(starship init zsh)"
-#eval "$(oh-my-posh init zsh --config ~/.poshthemes/chips.omp.json)"
-
-# ---------------------
 
 # ========================
 
@@ -48,10 +25,9 @@ export ZSH=$HOME/.oh-my-zsh
 
 plugins=(
   git
-  fast-syntax-highlighting
+  zsh-syntax-highlighting
   zsh-autosuggestions
-  dnf
-  sudo
+  #sudo
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -60,7 +36,7 @@ source $ZSH/oh-my-zsh.sh
 # Set idle terminal title (works only if oh-my-zsh is installed)
 # ---------------------
 
-export ZSH_THEME_TERM_TITLE_IDLE="%n:%~"
+#export ZSH_THEME_TERM_TITLE_IDLE="%n:%~"
 
 # ---------------------
 
@@ -80,9 +56,9 @@ setopt NULL_GLOB
 # Preferred editor for local and remote sessions
 # ---------------------
 if [[ -n $SSH_CONNECTION ]]; then
-  export EDITOR='vim'
+  export EDITOR='nano'
 else
-  export EDITOR='nvim'
+  export EDITOR='nano'
 fi
 # ---------------------
 
@@ -96,7 +72,7 @@ fi
 # Configs
 # ---------------------
 alias zconfig="nvim ~/.zshrc"                   
-alias fconfig="nvim ~/.config/fish/config.fish"
+#alias fconfig="nvim ~/.config/fish/config.fish"
 alias cls="clear"                                 
 # ---------------------                                                 
                                                   
@@ -104,19 +80,19 @@ alias cls="clear"
 # ---------------------                           
 # Package managing (pacman)                       
 # ---------------------
-alias pacinstall="sudo pacman -S"                
-alias pacremove="sudo pacman -Rn"                 
-alias pacupdate="sudo pacman -Syyu"
-alias upall="dnfu && flatpak upgrade"
+#alias pacinstall="sudo pacman -S"                
+#alias pacremove="sudo pacman -Rn"                 
+#alias pacupdate="sudo pacman -Syyu"
+#alias upall="dnfu && flatpak upgrade"
 # ---------------------
 
 
 # ---------------------           
 # System
 # ---------------------
-alias sysinfo="inxi -Fazy"
-alias set-nvidia="sudo mv /etc/X11/xorg.conf.d/nvidia.conf.bak /etc/X11/xorg.conf.d/nvidia.conf && gnome-session-quit"
-alias set-hybrid="sudo mv /etc/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf.bak && gnome-session-quit"
+#alias sysinfo="inxi -Fazy"
+#alias set-nvidia="sudo mv /etc/X11/xorg.conf.d/nvidia.conf.bak /etc/X11/xorg.conf.d/nvidia.conf && #gnome-session-quit"
+#alias set-hybrid="sudo mv /etc/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/nvidia.conf.bak && #gnome-session-quit"
 # ---------------------           
                                   
                                   
@@ -124,8 +100,9 @@ alias set-hybrid="sudo mv /etc/X11/xorg.conf.d/nvidia.conf /etc/X11/xorg.conf.d/
 # Navigation
 # ---------------------  
 alias dotfiles="cd ~/.dotfiles"
+alias caf="caffeinate -disu"
 # ---------------------           
-                                  
+
                                   
 # ---------------------           
 # File managment                  
@@ -139,17 +116,20 @@ alias cp="cp -i"
 # ---------------------                                                                  
 # Text editing
 # ---------------------
-alias vim="nvim"                                                                         
-alias cat="bat --theme=Monokai Extended Light"
+#alias vim="nvim"                                                                         
+alias cat="bat"
 # ---------------------                                                                  
                                                                                          
                                                                                          
 # ---------------------                                                                  
 # Better 'ls'
 # ---------------------  
-alias tree="exa -T --color=always --color-scale --icons"                                 
-alias ls="exa -lh --color=always --color-scale --group-directories-first --icons" 
-alias la="exa -lha --color=always --color-scale --group-directories-first --icons"
+alias tree="echo && eza -T --color=always --icons"                                 
+alias ll="echo && eza -lh --color=auto  --icons --no-filesize" 
+alias ls="echo && eza --grid --color=auto  --icons --no-user --no-filesize" 
+alias l="echo && eza -1 --color=auto  --icons --no-user --no-filesize" 
+alias la="echo && eza -a --grid --color=auto  --icons --no-user --no-filesize" 
+alias lla="echo && eza -lha --color=always  --icons --no-filesize"
 # ---------------------
 
 # =====================
@@ -164,7 +144,7 @@ alias la="exa -lha --color=always --color-scale --group-directories-first --icon
 # ---------------------
 # Scripts in path
 # ---------------------
-export PATH="$HOME/.dotfiles/scripts:$PATH"
+# export PATH="$HOME/.dotfiles/scripts:$PATH"
 # ---------------------
 
 # ---------------------
@@ -176,6 +156,49 @@ export NVM_DIR="$HOME/.nvm"
 # ---------------------
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
+# source <(ng completion script)
 
 # ========================
+
+
+# ========================
+# Custom paths
+# ========================
+# Database paths (postgres and mysql w/brew)
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
+
+
+#export PATH="/opt/homebrew/opt/mysql@8.4/bin:$PATH"
+# ========================
+
+
+# Golang GOPATH bin
+#export PATH="$HOME/go/bin:$PATH"
+
+# sqlcl (Oracle SQL Developer Command Line)
+# export PATH="/opt/homebrew/Caskroom/sqlcl/24.4.4.086.1931/sqlcl/bin:$PATH"
+
+# Composer
+
+# export PATH="$HOME/.composer/vendor/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/Users/robertob/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
+eval "$(oh-my-posh init zsh --config '~/.config/ohmyposh/config.yaml')"
+
+# opencode
+export PATH=/Users/robertob/.opencode/bin:$PATH
+
+#claude
+export PATH="$HOME/.local/bin:$PATH"
+
+# flutter
+#export PATH=$HOME/Developer/Flutter/flutter/bin:$PATH
+#export PATH=$HOME/Developer/Android/cmdline-tools/latest/bin:$PATH
+#export PATH=$HOME/Developer/Android/cmdline-tools/emulator:$PATH

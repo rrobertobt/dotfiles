@@ -17,9 +17,16 @@ add_newline = false
 # $cmd_duration$status$character
 # """
 
+# Old custom format
+# format = """
+# $username$hostname
+# $shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$shell
+# $cmd_duration$status$time$character
+# """
+
 format = """
 $username$hostname
-$shlvl$kubernetes$directory$git_branch$git_commit$git_state$git_status$hg_branch$docker_context$package$cmake$dart$dotnet$elixir$elm$erlang$golang$helm$java$julia$kotlin$nim$nodejs$ocaml$perl$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$shell
+$directory$git_branch$git_commit$git_state$git_status$hg_branch$package$cmake$dart$java$kotlin$nodejs$php$purescript$python$ruby$rust$scala$swift$terraform$vagrant$zig$nix_shell$conda$memory_usage$aws$gcloud$openstack$env_var$crystal$custom$lua$jobs$battery$shell
 $cmd_duration$status$time$character
 """
 
@@ -43,7 +50,7 @@ staged = '[+\([$count](green)\)](bold green)'
 stashed = '[\$\([$count](red)\)](bold red)'
 untracked = '[?\([$count](blue)\)](bold blue)'
 modified = '[!\([$count](yellow)\)](bold yellow)'
-deleted = '[\([$count](red)\)](bold red)'
+deleted = '[\([$count](red)\)](bold red)'
 ahead = '[⇡\([$count](yellow)\)](bold yellow)'
 behind = '[⇣\([$count](red)\)](bold red)'
 diverged = '[⇕\([DIV](red)\)](bold red)'
@@ -59,15 +66,14 @@ only_detached = true
 
 [git_branch]
 #symbol = ""
-symbol = " "
-format = "[$symbol$branch]($style) "
-style = "242 bold"
-
+symbol = ""
+format = "on [$symbol $branch]($style) "
+style = "bold"
 
 # ====== exec time of a command module======
 [cmd_duration]
 min_time = 1000
-format = "[$duration ](yellow)"
+format = "took [$duration ](yellow)"
 
 # ====== exit status of previous command module ======
 [status]
@@ -87,7 +93,9 @@ disabled = false
 #success_symbol = "[\\$](bold purple)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 #error_symbol = "[\\$](bold red)" #✗
 
-success_symbol = "[❯](bold purple)"
+# success_symbol = "[\\$](bold)"
+# error_symbol = "[\\$](bold red)" #✗
+success_symbol = "[❯](bold)"
 error_symbol = "[❯](bold red)" #✗
 
 # ====== current time module ======
@@ -118,6 +126,11 @@ style_root = "bold bright-red"
 [aws]
 symbol = "  "
 
+[kotlin]
+symbol = " "
+format = 'with [$symbol\([Kotlin]($style)\)]($style)'
+style = 'bold purple'
+
 [conda]
 symbol = " "
 
@@ -144,6 +157,8 @@ symbol = " "
 
 [java]
 symbol = " "
+style = "bold red"
+format = "with [$symbol($version) ]($style)"
 
 [julia]
 symbol = " "
@@ -158,8 +173,8 @@ symbol = " "
 symbol = " "
 
 [nodejs]
-symbol = " "
-format = "via [$symbol($version )]($style)"
+symbol = " "
+format = "with [$symbol($version )]($style)"
 
 [package]
 symbol = " "
