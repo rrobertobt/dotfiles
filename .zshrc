@@ -198,6 +198,9 @@ export PATH=/Users/robertob/.opencode/bin:$PATH
 #claude
 export PATH="$HOME/.local/bin:$PATH"
 
+#zoxide
+eval "$(zoxide init zsh)"
+
 # flutter
 #export PATH=$HOME/Developer/Flutter/flutter/bin:$PATH
 #export PATH=$HOME/Developer/Android/cmdline-tools/latest/bin:$PATH
